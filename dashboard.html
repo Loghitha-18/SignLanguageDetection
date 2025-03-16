@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignAlert Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-page">
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-hands"></i>
+                <h1>SignAlert</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Detection</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <h2>Monitoring Dashboard</h2>
+                <div class="dashboard-controls">
+                    <select id="time-filter">
+                        <option value="day">Last 24 Hours</option>
+                        <option value="week">Last Week</option>
+                        <option value="month">Last Month</option>
+                    </select>
+                    <button id="refresh-data" class="btn secondary"><i class="fas fa-sync"></i> Refresh</button>
+                </div>
+            </div>
+            
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="stat-content">
+                        <h3>Danger Alerts</h3>
+                        <p id="danger-count" class="stat-value">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-content">
+                        <h3>Total Detections</h3>
+                        <p id="detection-count" class="stat-value">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="stat-content">
+                        <h3>Avg. Response Time</h3>
+                        <p id="avg-response" class="stat-value">0s</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Detection History</h3>
+                    <div id="history-chart" class="chart">
+                        <canvas id="detectionHistoryChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Sign Type Distribution</h3>
+                    <div id="distribution-chart" class="chart">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="data-table-container">
+                <h3>Detection Log</h3>
+                <table id="detection-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Sign Detected</th>
+                            <th>Confidence</th>
+                            <th>Is Danger</th>
+                            <th>Response</th>
+                        </tr>
+                    </thead>
+                    <tbody id="log-table-body">
+                        <!-- Table will be populated by JavaScript -->
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button id="prev-page" class="btn secondary" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                    <span id="page-indicator">Page 1 of 1</span>
+                    <button id="next-page" class="btn secondary" disabled>Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SignAlert System | <a href="index.html">Return to Detection</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Detection System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-hands"></i>
+                <h1>SignAlert</h1>
+            </div>
+            <ul>
+                <li><a href="index.html" class="active">Detection</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="camera-container">
+                <h2>Sign Language Detection</h2>
+                <div class="video-wrapper">
+                    <video id="video" autoplay muted playsinline></video>
+                    <div id="loading-indicator" class="loading">
+                        <div class="spinner"></div>
+                    </div>
+                    <div id="detection-overlay">
+                        <div id="detection-label"></div>
+                    </div>
+                    <div id="subtitles-container" class="subtitles"></div>
+                </div>
+                <div class="controls">
+                    <button id="startButton" class="btn primary"><i class="fas fa-play"></i> Start Camera</button>
+                    <button id="captureButton" class="btn secondary" disabled><i class="fas fa-camera"></i> Capture</button>
+                    <div class="auto-detect-container">
+                        <input type="checkbox" id="autoDetectCheckbox" disabled>
+                        <label for="autoDetectCheckbox">Auto Detect</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <div class="status-container">
+                    <h3>Detection Status</h3>
+                    <div id="status" class="status idle">
+                        <span class="status-indicator"></span>
+                        <span class="status-text">Idle</span>
+                    </div>
+                </div>
+                
+                <div class="detection-history">
+                    <h3>Recent Detections</h3>
+                    <ul id="detection-list">
+                        <!-- Detection history will be populated here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="alert-overlay" class="hidden">
+            <div class="alert-box danger">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h2>DANGER DETECTED</h2>
+                <p id="alert-message">A danger sign has been detected. Please respond accordingly.</p>
+                <button id="acknowledgeDanger" class="btn primary">Acknowledge</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SignAlert System | <a href="dashboard.html">View Dashboard</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
