@@ -22,9 +22,13 @@ const maxDetectionHistory = 10;
 const detectionInterval = 2000; // Auto detection every 2 seconds
 
 //Twilio Configuration
-const TWILIO_ACCOUNT_SID = 'ACf5f6f5141d1c4e4caab421e2286a1a3c'; // Replace with your Twilio Account SID
-const TWILIO_AUTH_TOKEN = 'f06d847dc8cac492d5f5633c0d777926'; // Replace with your Twilio Auth Token
-const TWILIO_PHONE_NUMBER = '+19895141369'; // Replace with your Twilio phone number
+// const TWILIO_ACCOUNT_SID = 'ACf5f6f5141d1c4e4caab421e2286a1a3c'; // Replace with your Twilio Account SID
+// const TWILIO_AUTH_TOKEN = 'f06d847dc8cac492d5f5633c0d777926'; // Replace with your Twilio Auth Token
+// const TWILIO_PHONE_NUMBER = '+19895141369'; // Replace with your Twilio phone number
+
+const TWILIO_ACCOUNT_SID = 'AC999874b6248b02b47638bda48482128f'; // Replace with your Twilio Account SID
+const TWILIO_AUTH_TOKEN = '1fddd6448f44ab263e80039b0eb71095'; // Replace with your Twilio Auth Token
+const TWILIO_PHONE_NUMBER = '+12523902591'; 
 const MOBILE_NUMBERS = [
     '+919626148605', // Replace with first mobile number
     '+916380401249', // Replace with second mobile number
